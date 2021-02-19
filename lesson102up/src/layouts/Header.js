@@ -1,0 +1,20 @@
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import img1 from "../images/img1.jpg";
+import img2 from "../images/img2.jpg";
+import img3 from "../images/img3.jpg";
+import "../styles/Header.css";
+const Header = () => {
+  return (
+    <>
+      <Switch>
+        <Route path="/" exact render={() => <img src={img1} alt="miaso" />} />
+        <Route path="/products" render={() => <img src={img3} alt="miaso" />} />
+        <Route path="/admin" render={() => <img src={img3} alt="miaso" />} />
+        <Route path="/contact" render={() => <img src={img2} alt="miaso" />} />;
+      </Switch>
+    </>
+  );
+};
+
+export default Header;

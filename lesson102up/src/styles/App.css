@@ -1,0 +1,35 @@
+.App {
+  width: 90%;
+  margin: 0 auto;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ddd;
+  display: flex;
+}
+header {
+  flex-basis: 30vh;
+  position: relative;
+  overflow: hidden;
+}
+main {
+  display: flex;
+  padding: 30px 0;
+  flex-grow: 1;
+}
+footer {
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+aside {
+  min-width: 240px;
+}
+.page {
+  flex-grow: 1;
+}
+nav {
+  float: left;
+}
