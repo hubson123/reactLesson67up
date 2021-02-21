@@ -4,13 +4,13 @@ import Footer from "./Footer.js";
 import Header from "./Header.js";
 import Navigation from "./Navigation.js";
 import Page from "./Page.js";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 
 class App extends Component {
   state = {};
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <div className="App">
           <header>{<Header />}</header>
           <main>
@@ -21,7 +21,7 @@ class App extends Component {
           </main>
           <footer>{<Footer />}</footer>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
