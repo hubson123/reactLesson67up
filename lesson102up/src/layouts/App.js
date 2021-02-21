@@ -10,7 +10,7 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={ProcessingInstruction.env.PUBLIC_URL}>
         <div className="App">
           <header>{<Header />}</header>
           <main>
