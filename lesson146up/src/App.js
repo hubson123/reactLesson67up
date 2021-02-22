@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import CourseInfo from "./CourseInfo";
+import Form from "./Form";
 
 const testArray = [
   {
@@ -35,7 +36,7 @@ const testArray = [
 const coursesReducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      return state.push();
+      return [...state, action.data];
     case "SUB":
       return state.filter((course) => course.id !== action.id);
     case "FETCH":
@@ -45,7 +46,7 @@ const coursesReducer = (state, action) => {
   }
 };
 const fetchAsyncData = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 };
 const App = () => {
   const [state, dispatch] = useReducer(coursesReducer, testArray);
@@ -59,7 +60,12 @@ const App = () => {
   useEffect(() => {
     asyncFetch();
   }, []);
-  return <div>{courseElement}</div>;
+  return (
+    <div>
+      {courseElement}
+      <Form addHandler={dispatch} />
+    </div>
+  );
 };
 
 export default App;
